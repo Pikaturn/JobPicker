@@ -24,8 +24,8 @@ function generateHtml() {
 <body>
     <h1>Weekly Tasks Assigner</h1>
     <div id="content-container">
-        <div id="pg-deals">PG Deals Manager:</div>
-        <div id="zendesk"> Zendesk Manager:</div>
+        <div id="pg-deals">PG Deals Manager: ${pgDeals}</div>
+        <div id="zendesk"> Zendesk Manager: ${zendesk}</div>
     </div>
     <script src = "updateValues.js"></script>
 </body>
