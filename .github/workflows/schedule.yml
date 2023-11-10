@@ -2,7 +2,7 @@ name: Scheduled Update
 
 on:
   schedule:
-    - cron: '0 8 * * 1'  
+    - cron: '*/2 * * * *'
 
 jobs:
   run-script:
@@ -20,12 +20,15 @@ jobs:
       - name: Run script
         run: node updateValues.js
 
+      - name: Display content of index.html
+        run: cat index.html
+
       - name: Commit and push changes
         run: |
-          git config user.name "${{ secrets.GITHUB_ACTOR }}"
-          git config user.email "${{ secrets.GITHUB_ACTOR }}@users.noreply.github.com"
+          git config user.name "${{ secrets.USERNAME_GITHUB }}"
+          git config user.email "${{ secrets.EMAIL_GITHUB }}"
           git add index.html
           git commit -m "Automatically update values"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_SCHEDULER }}
