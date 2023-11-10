@@ -24,6 +24,7 @@ jobs:
         run: |
           git config user.name "${{ secrets.USERNAME_GITHUB }}"
           git config user.email "${{ secrets.EMAIL_GITHUB }}"
+          git pull
           git add index.html
           git commit -m "Automatically update values"
           git push
