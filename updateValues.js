@@ -13,20 +13,23 @@ function generateHtml() {
 
     const htmlContent = `
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weekly Tasks Assigner</title>
-    </head>
-    <body>
-        <h1>Weekly Tasks Assigner</h1>
-        <div id="content-container">
-            <div id="pg-deals">PG Deals Manager: ${pgDeals}</div>
-            <div id="zendesk">Zendesk Manager: ${zendesk}</div>
-        </div>
-    </body>
-    </html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Tasks Assigner</title>
+</head>
+<body>
+    <h1>Weekly Tasks Assigner</h1>
+    <div id="content-container">
+        <div id="pg-deals">PG Deals Manager:</div>
+        <div id="zendesk"> Zendesk Manager:</div>
+    </div>
+    <script src = "updateValues.js"></script>
+</body>
+</html>
     `;
 
     fs.writeFileSync('index.html', htmlContent);
