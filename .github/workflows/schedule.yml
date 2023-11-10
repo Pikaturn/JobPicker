@@ -20,9 +20,6 @@ jobs:
       - name: Run script
         run: node updateValues.js
 
-      - name: Display content of index.html
-        run: cat index.html
-
       - name: Commit and push changes
         run: |
           git config user.name "${{ secrets.USERNAME_GITHUB }}"
