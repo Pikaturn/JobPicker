@@ -2,7 +2,7 @@ name: Scheduled Update
 
 on:
   schedule:
-    - cron: '0 9 * * 6'
+    - cron: '0 6 * * 1'
 
 jobs:
   run-script:
@@ -24,7 +24,7 @@ jobs:
         run: |
           git config user.name "${{ secrets.USERNAME_GITHUB }}"
           git config user.email "${{ secrets.EMAIL_GITHUB }}"
-          
+
           git add index.html
           git commit -m "Automatically update values"
           git push
