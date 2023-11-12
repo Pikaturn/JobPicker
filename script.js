@@ -26,7 +26,7 @@ h1.addEventListener('click', function () {
 
 function displayCurrentDate() {
   const currentDate = new Date(); // fetch current date
-  const formattedDate = currentDate.toDateString() + 1; // format to date string
+  const formattedDate = currentDate.toDateString(); // format to date string
   currentDateHtml.innerHTML = `Current Date: <span id="name">${formattedDate}</span>`; // update the current-date
 }
 
