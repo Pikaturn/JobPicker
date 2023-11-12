@@ -1,0 +1,9 @@
+1000000 - Iterations
+
+{
+  Kristijonas: 399710,
+  Paulius: 400681,
+  Viktorija: 399333,
+  Dovile: 399885,
+  Mindaugas: 400391
+}
