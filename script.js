@@ -1,46 +1,47 @@
-'use strict'
+'use strict';
 
-const AWS = require('aws-sdk')
+const correctPassword = 'Dsp2024';
+const content = document.getElementById('content-container');
+const currentDateHtml = document.getElementById('current-date');
+const nextMonday = document.getElementById('next-monday');
+const currentDateGlobal = new Date();
+let body = document.getElementById('body-b');
+let h1 = document.getElementById('title');
 
-AWS.config.update({
-    accessKeyId: 'AKIA6GEYC6555IPBS7HK',
-    secretAccessKey: "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",
-    region: 'eu-north-1'
-})
+h1.addEventListener('click', function () {
+  window.location.href = 'index.html';
+});
 
-const teamMembers = ['Mindaugas','Viktorija','Kristijonas',"Paulius",'Dovile']
-const pgDeals = document.getElementById('pg-deals')
-const zendesk = document.getElementById('zendesk')
-let currentSelection =['Person1', 'Person2'];
+// const promptForPassword = () => {
+//   let enteredPassword = prompt('Enter the key to view the content:', '');
+//   if (enteredPassword === correctPassword) {
+//     body.style.display = 'block';
+//   } else if (enteredPassword !== correctPassword) {
+//     alert('Incorrect Key. Try again');
+//     promptForPassword();
+//   } else if (enteredPassword === '') {
+//     promptForPassword();
+//   }
+// };
 
-let lastWeekSelection =[];
-
-function isMonday8am(){
-    const today = new Date();
-    return today.getDay() === 1 && today.getHours() === 8;
+function displayCurrentDate() {
+  const currentDate = new Date(); // fetch current date
+  const formattedDate = currentDate.toDateString() + 1; // format to date string
+  currentDateHtml.innerHTML = `Current Date: <span id="name">${formattedDate}</span>`; // update the current-date
 }
 
+function getNextMonday() {
+  const currentDate = new Date(); // create a variable with the current date
 
-function selectTeamMembers(){
-let currentSelection =[]
-
-while (currentSelection.length <2){
-    const randomIndex = Math.floor(Math.random() * teamMembers.length);
-    const selectedMember = teamMembers[randomIndex];
-
-    if(!lastWeekSelection.includes(selectedMember) || lastWeekSelection.length === 0 ){
-        currentSelection.push(selectedMember)
-    }
-
-
-    lastWeekSelection = currentSelection;
-}
-return currentSelection;
+  const dayofWeek = currentDate.getDay(); // get the current day of the week
+  const daysUntilMonday = dayofWeek === 0 ? 1 : 8 - dayofWeek; // if the current day of the week =0 then there's 1 day left till next monday otherwise 8 - current day of the week
+  currentDate.setDate(currentDate.getDate() + daysUntilMonday); // gets current date and adds days that are left untill monday
+  const nextMondayDate = currentDate.toDateString(); // converts to readable string
+  return nextMondayDate;
 }
 
+getNextMonday();
+displayCurrentDate();
 
-if (isMonday8am()){
-    currentSelection = selectTeamMembers();
-    pgDeals.textContent = `Pg Deals Manager: ${currentSelection[0]}`
-zendesk.textContent = `Zendesk Manager: ${currentSelection[1]}`
-}
+nextMonday.textContent = `Next Scheduled Assignment: ${getNextMonday()}`;
+// promptForPassword();

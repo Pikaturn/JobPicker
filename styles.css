@@ -1,18 +1,150 @@
-*{
+* {
     font-family: 'Ubuntu', sans-serif;
-    background-color: rgb(13,20,13);
-color: blanchedalmond
+    color: blanchedalmond
 }
 
-h1{
-    margin: 40px;
+body {
+    background: linear-gradient(to right, rgb(30, 30, 33), #242424);
+}
+
+h1 {
+    font-size: 3em;
+    margin: 2em;
+}
+
+#body-b {
+    display: none;
 }
 
 
-#content-container{
-    margin-left: 50px;
+
+#content-container {
+    margin-left: 2em;
+    animation: fadeIn 1s ease-in-out;
 }
 
-#pg-deals{
-    margin-bottom: 30px;;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#content-container,
+#body-container,
+#tasks {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+}
+
+
+
+
+#pg-deals,
+#zendesk,
+#last-week-picks,
+#last-name {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+
+#pg-deals {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+
+}
+
+#zendesk {
+    margin-left: 30px;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+#current-date {
+    margin-top: 3.4em;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+#tasks {
+    font-size: 30px;
+    ;
+    margin: 60px;
+}
+
+#tasks span:hover {
+    color: #b48c3c
+}
+
+#pg-deals:hover,
+#zendesk:hover,
+h1:hover {
+    color: #b48c3c;
+    transform: scale(1.01);
+    color: #e74c3c;
+    cursor: pointer;
+
+}
+
+#name {
+    color: rgb(180, 140, 60);
+}
+
+#next-monday {
+    font-size: 20px;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-style: italic;
+    padding: 20px;
+    margin-bottom: 10px;
+    color: #e74c3c;
+
+}
+
+
+
+#last-week {
+    margin-left: 30px;
+}
+
+#last-week-picks {
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#last-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#line {
+    margin-top: 2em;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    font-size: 0.8em;
+    margin-left: 2em;
+    border-radius: 20px;
 }
