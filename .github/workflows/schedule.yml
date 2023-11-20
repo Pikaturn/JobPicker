@@ -26,6 +26,7 @@ jobs:
           git config user.email "${{ secrets.EMAIL_GITHUB }}"
 
           git add index.html
+          git add lastWeekAssignments.json
           git commit -m "Automatically update values"
           git push
         env:

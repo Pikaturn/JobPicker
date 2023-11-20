@@ -76,6 +76,7 @@ h1 {
     margin-top: 3.4em;
     margin-right: 20px;
     font-size: 30px;
+    min-width: 426px;
 }
 
 #tasks {
