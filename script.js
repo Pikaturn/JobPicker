@@ -34,7 +34,7 @@ function getNextSunday() {
   const currentDate = new Date(); // create a variable with the current date
 
   const dayofWeek = currentDate.getDay(); // get the current day of the week
-  const daysUntilSunday = dayofWeek === 0 ? 0 : 7 - dayofWeek; // if the current day of the week =0 then there's 1 day left till next monday otherwise 8 - current day of the week
+  const daysUntilSunday = dayofWeek === 6 ? 1 : 7 - dayofWeek; // if the current day of the week =0 then there's 1 day left till next monday otherwise 8 - current day of the week
   currentDate.setDate(currentDate.getDate() + daysUntilSunday); // gets current date and adds days that are left untill Sunday
   const nextSundayDate = currentDate.toDateString(); // converts to readable string
   return nextSundayDate;
