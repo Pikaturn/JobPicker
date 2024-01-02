@@ -1,12 +1,6 @@
 const fs = require('fs'); // calling node module for file operations
 
-const teamMembers = [
-  'Mindaugas',
-  'Dovilė',
-  'Viktorija',
-  'Kristijonas',
-  'Paulius',
-];
+const teamMembers = ['Mindaugas', 'Dovilė', 'Viktorija', 'Paulius'];
 
 // function simulateRandomPicking(iterations) {
 //   const lastWeekAssignmentsString = fs.readFileSync(
