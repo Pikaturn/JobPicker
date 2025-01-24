@@ -1,6 +1,6 @@
 const fs = require('fs'); // calling node module for file operations
 
-const teamMembers = ['Dovilė', 'Viktorija', 'Ernestas', 'Beta'];
+const teamMembers = ['Dovilė', 'Ernestas', 'Beta'];
 
 // function simulateRandomPicking(iterations) {
 //   const lastWeekAssignmentsString = fs.readFileSync(
@@ -100,7 +100,7 @@ function generateHtml() {
     </div>
     <script src="script.js"></script>
     <footer>
-    <p>&copy; 2023 MP All rights reserved.</p>
+    <p>&copy; ${new Date().getFullYear()} MP All rights reserved.</p>
     </div>
   </body>
 </html>
