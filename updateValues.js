@@ -1,6 +1,6 @@
-const fs = require('fs'); // calling node module for file operations
+const fs = require("fs"); // calling node module for file operations
 
-const teamMembers = ['Dovilė', 'Ernestas', 'Beta', 'Nikhil'];
+const teamMembers = ["Ernestas", "Beta", "Nikhil"];
 
 // function simulateRandomPicking(iterations) {
 //   const lastWeekAssignmentsString = fs.readFileSync(
@@ -22,7 +22,7 @@ const teamMembers = ['Dovilė', 'Ernestas', 'Beta', 'Nikhil'];
 const getRandomTeamMember = (excludeList) => {
   // excludeList function which takes last week's assigned members and excludes them
   const availableMembers = teamMembers.filter(
-    (member) => !excludeList.includes(member)
+    (member) => !excludeList.includes(member),
   );
   // created a new variable where we store filtered out members which are not in the exclude list (lasWeekPgdeals, lastWeekZendesk, PgDeals)
   const randomIndex = Math.floor(Math.random() * availableMembers.length); // member picker calculation, a random number is generated from 0 to 1 then it is multiplied by the length of the array and rounded down to an integer. The final result is from 0 to arrays length (0-2)
@@ -32,12 +32,12 @@ const getRandomTeamMember = (excludeList) => {
 const getLastWeekAssignments = () => {
   try {
     const lastWeekAssignmentsString = fs.readFileSync(
-      'lastWeekAssignments.json',
-      'utf8'
+      "lastWeekAssignments.json",
+      "utf8",
     ); // try to read lastweekAssigmnet.json file
     return JSON.parse(lastWeekAssignmentsString); //return an object with key/value pairs of job and person
   } catch (error) {
-    console.error('Error reading last week assignments:', error.message); // if failed return error in the console
+    console.error("Error reading last week assignments:", error.message); // if failed return error in the console
     return {};
   }
 };
@@ -56,8 +56,8 @@ function generateHtml() {
 
   const thisWeekAssignments = { pgDeals, zendesk }; // Save this week's assignments to be used as last week's assignments next time
   fs.writeFileSync(
-    'lastWeekAssignments.json',
-    JSON.stringify(thisWeekAssignments)
+    "lastWeekAssignments.json",
+    JSON.stringify(thisWeekAssignments),
   );
 
   const htmlContent = `
@@ -105,7 +105,7 @@ function generateHtml() {
   </body>
 </html>
 `;
-  fs.writeFileSync('index.html', htmlContent); //creates/updates the index.html with new values
+  fs.writeFileSync("index.html", htmlContent); //creates/updates the index.html with new values
 }
 
 generateHtml();
